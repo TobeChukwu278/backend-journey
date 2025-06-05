@@ -1,6 +1,12 @@
 // setting up express fondation
 const express = require('express');
-const PORT = 3000 || 4000;
+require('dotenv').config();
+
+
+const PORT = process.env.PORT || 4000;
+
+const connectDB = require('./config/db');
+connectDB();
 
 // creating an express app instance
 const app = express();
@@ -12,6 +18,7 @@ app.use(express.json());
 app.get('/', (req, res) => {
     res.send('Hello World');
 })
+
 
 // starting the server
 app.listen(PORT, () => {
