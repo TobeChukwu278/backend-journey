@@ -1,1 +1,6 @@
 node_modules
+
+jwtokens.js
+# Logs
+logs
+npm-debug.log*
